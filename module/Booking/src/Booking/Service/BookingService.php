@@ -68,6 +68,7 @@ class BookingService extends AbstractService
                 'quantity' => $quantity,
             ), $meta);
 
+
             $this->bookingManager->save($booking);
 
             $reservations = $this->reservationManager->createInRange($booking, $dateTimeStart, $dateTimeEnd);
@@ -117,12 +118,13 @@ class BookingService extends AbstractService
                 $booking->setExtra('bills', $extraBills);
             }
 
+
             if ($transaction) {
                 $this->connection->commit();
             }
 
-            $this->getEventManager()->trigger('create.single', $booking);
-
+            //$this->getEventManager()->trigger('create.single', $booking);
+            //vd('g');exit;
             return $booking;
 
         } catch (Exception $e) {

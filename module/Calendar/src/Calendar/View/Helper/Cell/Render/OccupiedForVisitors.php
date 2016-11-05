@@ -20,10 +20,28 @@ class OccupiedForVisitors extends AbstractHelper
             $reservation = current($reservations);
             $booking = $reservation->needExtra('booking');
 
+
+            $my_meta = ($booking->need('meta'));
+            if (isset($my_meta['player-names'])) {
+                $my_opponent = unserialize($my_meta['player-names']);
+                $my_opponent_name = $my_opponent[0]['value'];
+            } else {
+                $my_opponent_name ='';
+            }
+
             if ($square->getMeta('public_names', 'false') == 'true') {
-                $cellLabel = $booking->needExtra('user')->need('alias');
+                if ($my_opponent_name) {
+                    $cellLabel = $booking->needExtra('user')->need('alias').' - '.$my_opponent_name;
+                } else {
+                    $cellLabel = $booking->needExtra('user')->need('alias');
+                }
+
             } else if ($square->getMeta('private_names', 'false') == 'true' && $user) {
-                $cellLabel = $booking->needExtra('user')->need('alias');
+                if ($my_opponent_name) {
+                    $cellLabel = $booking->needExtra('user')->need('alias').' - '.$my_opponent_name;
+                } else {
+                    $cellLabel = $booking->needExtra('user')->need('alias');
+                }
             } else {
                 $cellLabel = null;
             }

@@ -40,6 +40,7 @@ return array(
         'choice' => array(
             'en-US' => 'English',
             'de-DE' => 'Deutsch',
+            'el-GR' => 'Ελληνικά',
         ),
     ),
 );

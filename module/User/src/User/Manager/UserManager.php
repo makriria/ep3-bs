@@ -61,8 +61,8 @@ class UserManager extends AbstractManager
         ), $meta);
 
         $this->save($user);
-
-        $this->getEventManager()->trigger('create', $user);
+//@todo check
+        //$this->getEventManager()->trigger('create', $user);
 
         return $user;
     }
@@ -76,8 +76,10 @@ class UserManager extends AbstractManager
      */
     public function save(User $user)
     {
-        $connection = $this->userTable->getAdapter()->getDriver()->getConnection();
+       // pr($user);
 
+        $connection = $this->userTable->getAdapter()->getDriver()->getConnection();
+//pr($connection);
         if (! $connection->inTransaction()) {
             $connection->beginTransaction();
             $transaction = true;
@@ -126,10 +128,9 @@ class UserManager extends AbstractManager
                 foreach ($user->need('removedMetaProperties') as $metaProperty) {
                     $this->userMetaTable->delete(array('uid' => $user->get('uid'), 'key' => $metaProperty));
                 }
-
                 $user->reset();
 
-                $this->getEventManager()->trigger('save.update', $user);
+              //  $this->getEventManager()->trigger('save.update', $user);
 
             } else {
 
@@ -180,14 +181,14 @@ class UserManager extends AbstractManager
                     $user->add('created', $created);
                 }
 
-                $this->getEventManager()->trigger('save.insert', $user);
+                //$this->getEventManager()->trigger('save.insert', $user);
             }
 
             if ($transaction) {
                 $connection->commit();
             }
 
-            $this->getEventManager()->trigger('save', $user);
+            //$this->getEventManager()->trigger('save', $user);
 
             return $user;
 
@@ -198,6 +199,9 @@ class UserManager extends AbstractManager
 
             throw $e;
         }
+
+
+
     }
 
     /**
@@ -406,7 +410,7 @@ class UserManager extends AbstractManager
 
         $deletion = $this->userTable->delete(array('uid' => $uid));
 
-        $this->getEventManager()->trigger('delete', $user);
+        //$this->getEventManager()->trigger('delete', $user);
 
         return $deletion;
     }

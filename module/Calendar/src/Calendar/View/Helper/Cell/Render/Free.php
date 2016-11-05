@@ -11,7 +11,8 @@ class Free extends AbstractHelper
     public function __invoke($user, $userBooking, array $reservations, array $cellLinkParams, Square $square)
     {
         $view = $this->getView();
-
+        //print_r($reservations);
+        //var_dump($reservations[$user->get('uid')]);
 	    $labelFree = $square->getMeta('label.free', $this->view->t('Free'));
 
         if ($user && $user->can('calendar.see-data, calendar.create-single-bookings, calendar.create-subscription-bookings')) {

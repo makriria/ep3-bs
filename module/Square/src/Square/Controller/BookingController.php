@@ -52,6 +52,14 @@ class BookingController extends AbstractActionController
         $productsParam = $this->params()->fromQuery('p', 0);
         $playerNamesParam = $this->params()->fromQuery('pn', 0);
 
+       //  print_r($dateStartParam.'<br/>');
+//         print_r($dateEndParam.'<br/>');
+//         print_r($timeStartParam.'<br/>');
+//         print_r($timeEndParam.'<br/>');
+        // print_r($squareParam.'<br/>');
+        // print_r($quantityParam.'<br/>');
+        // print_r($playerNamesParam.'<br/>');
+
         $serviceManager = $this->getServiceLocator();
         $squareValidator = $serviceManager->get('Square\Service\SquareValidator');
 
@@ -60,11 +68,11 @@ class BookingController extends AbstractActionController
         $user = $byproducts['user'];
 
         $query = $this->getRequest()->getUri()->getQueryAsArray();
+
         $query['ajax'] = 'false';
 
         if (! $user) {
             $this->redirectBack()->setOrigin('square/booking/confirmation', [], ['query' => $query]);
-
             return $this->redirect()->toRoute('user/login');
         } else {
             $byproducts['url'] = $this->url()->fromRoute('square/booking/confirmation', [], ['query' => $query]);
@@ -128,6 +136,8 @@ class BookingController extends AbstractActionController
             }
         }
 
+
+
         $byproducts['products'] = $products;
 
         /* Check passed player names */
@@ -138,12 +148,15 @@ class BookingController extends AbstractActionController
             $playerNames = null;
         }
 
+
         /* Check booking form submission */
 
         $acceptRulesDocument = $this->params()->fromPost('bf-accept-rules-document');
         $acceptRulesText = $this->params()->fromPost('bf-accept-rules-text');
         $confirmationHash = $this->params()->fromPost('bf-confirm');
         $confirmationHashOriginal = sha1('Quick and dirty' . floor(time() / 1800));
+
+
 
         if ($confirmationHash) {
             if ($square->getMeta('rules.document.file') && $acceptRulesDocument != 'on') {
@@ -176,13 +189,26 @@ class BookingController extends AbstractActionController
                 }
 
                 $bookingService = $serviceManager->get('Booking\Service\BookingService');
+/*            pr($bookingService);
+          pr($user);
+          pr($square);
+          pr($quantityParam);
+          pr($byproducts);
+          vd($bills);
+          pr(serialize($playerNames));
+
+
+         exit; */
+
                 $bookingService->createSingle($user, $square, $quantityParam, $byproducts['dateStart'], $byproducts['dateEnd'], $bills, array(
                     'player-names' => serialize($playerNames),
                 ));
-
+                //vd('df');exit;
                 $this->flashMessenger()->addSuccessMessage(sprintf($this->t('%sCongratulations:%s Your %s has been booked!'),
                     '<b>', '</b>', $this->option('subject.square.type')));
 
+//vd('d');
+//exit;
                 return $this->redirectBack()->toOrigin();
             }
         }

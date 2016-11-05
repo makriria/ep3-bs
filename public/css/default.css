@@ -41,7 +41,7 @@ table td,
 table th {
     margin: 0; padding: 0;
     text-align: left;
-    vertical-align: middle;
+    vertical-align: top;
     empty-cells: show;
 }
 
@@ -199,8 +199,8 @@ a#logo:active { top: 1px; }
 .calendar-square-row td { height: 28px; }
 .calendar-core-row td { height: 30px; }
 
-.cts-label, .day-label, .square-label { font-weight: bold; }
-.cte-label { color: #666; font-size: 10px; }
+.cts-label, .day-label, .square-label { font-weight: bold;  height: 24px;}
+.cte-label { color: #666; font-size: 10px;  height: 21px;}
 
 .calendar-cell {
     display: block;
@@ -219,7 +219,7 @@ a#logo:active { top: 1px; }
 
 .cc-label {
     display: block;
-    height: 10px;
+    height: 25px;
     overflow: visible;
 }
 

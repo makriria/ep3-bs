@@ -18,9 +18,8 @@ class OccupiedForPrivileged extends AbstractHelper
     public function __invoke(array $reservations, array $cellLinkParams)
     {
         $view = $this->getView();
-
+        //var_dump($reservations[$user->get('uid')]);
         $reservationsCount = count($reservations);
-
         if ($reservationsCount > 1) {
             return $view->calendarCellLink($this->view->t('Occupied'), $view->url('backend/booking/edit', [], $cellLinkParams), 'cc-single');
         } else {
@@ -34,9 +33,18 @@ class OccupiedForPrivileged extends AbstractHelper
                 $cellStyle = null;
             }
 
-            $cellLabel = $booking->needExtra('user')->need('alias');
-            $cellGroup = ' cc-group-' . $booking->need('bid');
 
+            $my_meta = ($booking->need('meta'));
+            if (isset($my_meta['player-names'])) {
+                $my_opponent = unserialize($my_meta['player-names']);
+                $my_opponent_name = $my_opponent[0]['value'];
+                $cellLabel = $booking->needExtra('user')->need('alias').' - '.$my_opponent_name;
+            } else {
+                $cellLabel = $booking->needExtra('user')->need('alias');
+            }
+
+            //$cellLabel = $booking->needExtra('user')->need('alias');
+            $cellGroup = ' cc-group-' . $booking->need('bid');
             switch ($booking->need('status')) {
                 case 'single':
                     return $view->calendarCellLink($cellLabel, $view->url('backend/booking/edit', [], $cellLinkParams), 'cc-single' . $cellGroup, null, $cellStyle);

@@ -16,6 +16,12 @@ ob_start();
 
 chdir(dirname(__DIR__));
 
+function pr($ar) {
+    echo "<meta charset=\"UTF-8\"><pre>";print_r($ar);echo "</pre>";
+}
+function vd($ar) {
+    echo "<pre>";var_dump($ar);echo "</pre>";
+}
 /**
  * Quickly check the current PHP version.
  */

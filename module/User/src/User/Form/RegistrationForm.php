@@ -419,6 +419,7 @@ class RegistrationForm extends Form
                             'message' => 'Your name is somewhat short ...',
                         ),
                     ),
+                    //@@todo makriria
                     array(
                         'name' => 'Regex',
                         'options' => array(
