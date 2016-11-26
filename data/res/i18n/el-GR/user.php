@@ -201,7 +201,7 @@ return array(
     'You can now login with your email address and password. Have fun!'
         => 'Μπορείτε τώρα να συνδεθείτε με το email και το password σας. Καλά παιχνίδια!',
     'However, your user account is %snot yet activated%s.'
-        => 'Ωστότο ο λογαριασμός σας δεν έχει %sενεργοποιηθεί ακόμαngs ist Ihr Benutzerkonto%s.',
+        => 'Ωστότο ο λογαριασμός σας δεν έχει %sενεργοποιηθεί ακόμαng%s.',
     'This will happen during a quick manual verification of your user account data.'
         => 'Αυτό θα γίνει χειροκίνητα από τον διαχειριστή',
     'Please be patient, this will be done soon.'

@@ -423,7 +423,7 @@ class RegistrationForm extends Form
                     array(
                         'name' => 'Regex',
                         'options' => array(
-                            'pattern' => '/^([ \&\'\(\)\+\,\-\.0-9\x{00c0}-\x{01ff}a-zA-Z])+$/u',
+                            'pattern' => '/^([ \&\'\(\)\+\,\-\.0-9\x{00c0}-\x{03CE}a-zA-Z])+$/u',
                             'message' => 'Your name contains invalid characters - sorry',
                         ),
                     ),
@@ -445,13 +445,13 @@ class RegistrationForm extends Form
                     array(
                         'name' => 'Regex',
                         'options' => array(
-                            'pattern' => '/^([ \'\+\-\x{00c0}-\x{01ff}a-zA-Z])+$/u',
+                            'pattern' => '/^([ \'\+\-\x{00c0}-\x{03CE}a-zA-Z])+$/u',
                             'message' => 'Your last name contains invalid characters - sorry',
                         ),
                     ),
                 ),
             ),
-            'rf-street' => array(
+          /*  'rf-street' => array(
                 'filters' => array(
                     array('name' => 'StringTrim'),
                     array('name' => 'Callback', 'options' => array('callback' => function($name) { return ucfirst($name); })),
@@ -474,7 +474,7 @@ class RegistrationForm extends Form
                     array(
                         'name' => 'Regex',
                         'options' => array(
-                            'pattern' => '/^([ \.\'\-\x{00c0}-\x{01ff}a-zA-Z])+$/u',
+                            'pattern' => '/^([ \.\'\-\x{00c0}-\x{03CE}a-zA-Z])+$/u',
                             'message' => 'This street name contains invalid characters - sorry',
                         ),
                     ),
@@ -545,12 +545,12 @@ class RegistrationForm extends Form
                     array(
                         'name' => 'Regex',
                         'options' => array(
-                            'pattern' => '/^([ \&\'\(\)\-\x{00c0}-\x{01ff}a-zA-Z])+$/u',
+                            'pattern' => '/^([ \&\'\(\)\-\x{00c0}-\x{03CE}a-zA-Z])+$/u',
                             'message' => 'This city name contains invalid characters - sorry',
                         ),
                     ),
                 ),
-            ),
+            ),*/
             'rf-phone' => array(
                 'filters' => array(
                     array('name' => 'StringTrim'),

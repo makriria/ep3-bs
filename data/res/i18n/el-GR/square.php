@@ -103,8 +103,8 @@ return array(
     'Change period:' => 'Αλλαγή διαστήματος:',
     'Check new period' => 'Έλεγχος νέου διαστήματος',
 
-    'The names of the other players are <b>optional</b>' => 'Τα ονόματα των άλλων παικτών είναι<b>προαιρετικά</b>',
-    'The names of the other players are <b>required</b>' => 'Τα ονόματα των άλλων παικτών είναι<b>υποχρεωτικά</b>',
+    'The names of the other players are <b>optional</b>' => 'Τα ονόματα των άλλων παικτών είναι <b>προαιρετικά</b>',
+    'The names of the other players are <b>required</b>' => 'Το όνoμα του δεύτερου παίκτη είναι <b>υποχρεωτικό</b>',
     'Player\'s name' => 'Όνομα παίκτη',
     'and email address' => 'και διέθυνση E-Mail',
     'and phone number' => 'και τηλέφωνο',

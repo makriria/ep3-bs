@@ -87,7 +87,7 @@ code {
     position: absolute;
     left: 0; top: 0;
     display: block;
-    width: 75px; height: 75px;
+    width: 145px; height: 75px;
     opacity: 1.0;
     background: url("../imgs-client/layout/logo.png") no-repeat center center;
 }
@@ -96,7 +96,7 @@ a#logo:active { top: 1px; }
 
 #label-client {
     margin-top: 3px;
-    text-indent: 91px;
+    text-indent: 151px;
     font-family: Arial, sans-serif;
     font-size: 16px;
     cursor: default;
@@ -104,7 +104,7 @@ a#logo:active { top: 1px; }
 }
 
 #label-service {
-    text-indent: 91px;
+    text-indent: 151px;
     font-family: Arial, sans-serif;
     font-size: 22px;
     cursor: default;
@@ -112,7 +112,7 @@ a#logo:active { top: 1px; }
 
 #branding {
     margin-top: 3px;
-    text-indent: 113px;
+    text-indent: 173px;
     font-style: italic;
     cursor: default;
     color: #999;

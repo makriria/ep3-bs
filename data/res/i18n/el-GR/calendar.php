@@ -5,10 +5,10 @@ return array(
     'The passed calendar date is invalid' => 'Αυτή η ημερομηνία δεν είναι έγκυρη',
     'The passed calendar squares are invalid' => 'Αυτή η καταχώρηση δεν είναι έγκυρη',
 
-    'Morning' => 'το ρωί',
+    'Morning' => 'το πρωί',
     'Afternoon' => 'το απόγευμα',
 
-    'Past' => 'Παρελθόν',
+    'Past' => '-',
     'Closed' => 'Κλειστό',
     'Free' => 'Ελεύθερο',
     'Still free' => 'Διαθέσιμο',

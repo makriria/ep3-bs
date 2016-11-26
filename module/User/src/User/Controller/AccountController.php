@@ -171,7 +171,7 @@ class AccountController extends AbstractActionController
                 $meta['city'] = $registrationData['rf-city'];
                 $meta['phone'] = $registrationData['rf-phone'];
 
-                if (! (isset($registrationData['rf-birthdate']) && preg_match('/^([ \,\-\.0-9\x{00c0}-\x{01ff}a-zA-Z]){4,}$/u', $registrationData['rf-birthdate']))) {
+                if (! (isset($registrationData['rf-birthdate']) && preg_match('/^([ \,\-\.0-9\x{00c0}-\x{03CE}a-zA-Z]){4,}$/u', $registrationData['rf-birthdate']))) {
                     $registrationData['rf-birthdate'] = null;
                 }
 

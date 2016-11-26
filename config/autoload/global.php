@@ -38,9 +38,9 @@ return array(
     ),
     'i18n' => array(
         'choice' => array(
-            'en-US' => 'English',
-            'de-DE' => 'Deutsch',
-            'el-GR' => 'Ελληνικά',
+            //'en-US' => 'English',
+            //'de-DE' => 'Deutsch',
+            //'el-GR' => 'Ελληνικά',
         ),
     ),
 );

@@ -7,7 +7,7 @@ return array(
     'Time' => 'Ώρα',
     'Show' => 'Προβολή',
 
-    'To book %s, %splease register first%s' => 'Για να κάνετε κράτηση στο %s, %sεγγραφείτε%s',
+    'To book %s, %splease register first%s' => 'Για να κάνετε κράτηση στα %s, %sεγγραφείτε%s',
     'or simply %s login here' => 'ή %s συνδεθείτε εδώ',
 
     'Email address' => 'Διεύθυνση E-Mail',
